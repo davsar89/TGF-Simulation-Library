@@ -6,6 +6,14 @@ clc
 alt = 9;
 beam_sigma = 30;
 Radial_dist = 503; % must be between 0 and 600
+%%
+
+if ~ismember(alt,[9:19])
+   error('Altitude must be 9, 11, 13, 15, 17 or 19 (km)'); 
+end
+if ~ismember(beam_sigma,[5 15 30])
+   error('Beaming must be 5, 15 or 30 (gaussian sigma)'); 
+end
 
 %%
 if ~exist('./PLOTS/', 'dir')
@@ -19,23 +27,23 @@ end
 [time_energy_matrix,energy_spectrum,energy_grid,time_spectrum,time_grid] = ...
     generate_TGF_time_energy_matrix_simple(alt,beam_sigma,Radial_dist);
 
-figure(1)
+figure(1), hold on
 histogram('BinEdges',energy_grid,'BinCounts',energy_spectrum,'DisplayStyle','stairs')
 set(gca,'xscale','log')
 set(gca,'yscale','log')
 title({'Energy Spectrum',...
     ['alt=' num2str(alt) ', beam sigma=' num2str(beam_sigma) ...
-    ', Raldial-dist=' num2str(Radial_dist)]})
+    ', Raldial-dist=' num2str(round(Radial_dist))]})
 xlabel('Energy (keV)')
 ylabel('dn/de spectrum (normalized)')
 grid on
 
-figure(2)
+figure(2), hold on
 histogram('BinEdges',time_grid,'BinCounts',time_spectrum,'DisplayStyle','stairs')
 % set(gca,'xscale','log')
 title({'Lightcurve (time)',...
     ['alt=' num2str(alt) ', beam sigma=' num2str(beam_sigma) ...
-    ', Raldial-dist=' num2str(Radial_dist)]})
+    ', Raldial-dist=' num2str(round(Radial_dist))]})
 xlabel('time (microsecond)')
 ylabel('dn/dt spectrum (normalized)')
 grid on
@@ -51,12 +59,14 @@ ylabel('Energy (keV)')
 colorbar
 title({'Time-Energy matrix',...
     ['alt=' num2str(alt) ', beam sigma=' num2str(beam_sigma) ...
-    ', Raldial-dist=' num2str(Radial_dist)]})
+    ', Raldial-dist=' num2str(round(Radial_dist))]})
 
 
 %% writing to files
-out_folder = ['./OUTPUT/' num2str(alt) '_' num2str(beam_sigma) '_' num2str(Radial_dist) '/'];
-mkdir(out_folder)
+out_folder = ['./OUTPUT/' num2str(alt) '_' num2str(beam_sigma) '_' num2str(round(Radial_dist)) '/'];
+if ~exist(out_folder, 'dir')
+    mkdir(out_folder)
+end
 
 dlmwrite_exp_format([out_folder 'energy_spec.csv'],[energy_grid(:) [-9.999000E+03;energy_spectrum(:)]]);
 dlmwrite_exp_format([out_folder 'time_spec.csv'],[time_grid(:) [-9.999000E+03;time_spectrum(:)]]);
@@ -65,12 +75,12 @@ dlmwrite_exp_format([out_folder 'matrix.csv'],[time_energy_matrix]);
 % saving plots
 figure(1)
 saveas(gcf,['./PLOTS/energy_spec_' num2str(alt) '_' num2str(beam_sigma) ...
-    '_' num2str(Radial_dist) '.png'])
+    '_' num2str(round(Radial_dist)) '.png'])
 figure(2)
 saveas(gcf,['./PLOTS/time_spec_' num2str(alt) '_' num2str(beam_sigma) ...
-    '_' num2str(Radial_dist) '.png'])
+    '_' num2str(round(Radial_dist)) '.png'])
 figure(3)
 saveas(gcf,['./PLOTS/matrix_' num2str(alt) '_' num2str(beam_sigma) ...
-    '_' num2str(Radial_dist) '.png'])
+    '_' num2str(round(Radial_dist)) '.png'])
 
 
