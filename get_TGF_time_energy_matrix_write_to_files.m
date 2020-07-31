@@ -8,11 +8,11 @@ beam_sigma = 30;
 Radial_dist = 503; % must be between 0 and 600
 %%
 
-if ~ismember(alt,[9:19])
+if ~ismember(alt,[9:2:19])
    error('Altitude must be 9, 11, 13, 15, 17 or 19 (km)'); 
 end
-if ~ismember(beam_sigma,[5 15 30])
-   error('Beaming must be 5, 15 or 30 (gaussian sigma)'); 
+if ~ismember(beam_sigma,[5 10 15 22 30 40])
+   error('Beaming must be 5, 10, 15, 22, 30 or 40 (gaussian sigma)'); 
 end
 
 %%
