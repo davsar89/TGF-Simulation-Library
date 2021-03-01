@@ -3,7 +3,7 @@
 * The TGF is assumed to have 10^17 photons with energies > 500 keV, produced at a given altitude (9 to 19 km)
     * The beam is centered around zenith, with a gaussian opening angle with a given sigma
     * The energy spectrum is 1/E*exp(-E/7.3MeV)
-    * Recorded energies are from 50 keV to 40 MeV
+    * Recorded energies are from 400 keV to 40 MeV
     * Available TGF altitudes are = 9, 11, 13, 15, 17 and 19 kilometers
     * Available TGF sigma angle are = 5, 10, 15, 22, 30 and 40 degrees
     * Available detector (record, satellite) altitudes are = 400, 470, 530 and 700 km
@@ -22,5 +22,5 @@
     * Output is in photons/cm^2.
     * The function's file `get_TGF_fluence.m` must be in the same folder as the data file `tgf_fluence_data.mat`
 
-* example: `my_fluence = get_TGF_fluence(11,30,530,120);` (TGF located at 11 km, sigma of 30 deg, record altitude of 530 km and radial distance of 120 km) gives `my_fluence = 6.3953e-04`
+* example: `my_fluence = get_TGF_fluence(11,30,530,120);` (TGF located at 11 km, sigma of 30 deg, record altitude of 530 km and radial distance of 120 km) gives `my_fluence = 0.0056`
     
