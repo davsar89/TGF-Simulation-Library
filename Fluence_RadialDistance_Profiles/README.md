@@ -15,12 +15,13 @@
     * `record_altitude` : list of available record altitudes (in km)
     * `fluences` : fluences in photons/cm^2. First index is altitude, second is sigma angle and third is record altitude.
     * `radial_distances` : radial distances grids (in km) corresponding to `fluences`, between 0 and 1200 km. First index is altitude, second is sigma angle and third is record altitude.
+    * `energy_threshold_list` : the list of minimum energy threshold (50, 200 and 400 keV)
     * WARNING: each profile (i.e. fluence versus radial distance) uses a different radial distance grid.
 
-* The MATLAB function `get_TGF_fluence` (contained in the file `get_TGF_fluence.m`) takes as input the TGF altitude; the TGF sigma angle, the record (satellite) altitude and the radial distance. 
+* The MATLAB function `get_TGF_fluence` (contained in the file `get_TGF_fluence.m`) takes as input the TGF altitude; the TGF sigma angle, the record (satellite) altitude, the radial distance and the minimum (threshold) energy of recorded photons. 
     * The first 3 can only have the values specified above, and the radial distance can be any value between 0 and 1200 km.
     * Output is in photons/cm^2.
     * The function's file `get_TGF_fluence.m` must be in the same folder as the data file `tgf_fluence_data.mat`
 
-* example: `my_fluence = get_TGF_fluence(11,30,530,120);` (TGF located at 11 km, sigma of 30 deg, record altitude of 530 km and radial distance of 120 km) gives `my_fluence = 0.0056`
+* example: `my_fluence = get_TGF_fluence(11,30,530,120,400);` (TGF located at 11 km, sigma of 30 deg, record altitude of 530 km and radial distance of 120 km) gives `my_fluence = 0.0056`
     
