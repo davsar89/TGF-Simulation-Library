@@ -23,5 +23,5 @@
     * Output is in photons/cm^2.
     * The function's file `get_TGF_fluence.m` must be in the same folder as the data file `tgf_fluence_data.mat`
 
-* example: `my_fluence = get_TGF_fluence(11,30,530,120,400)` (TGF located at 11 km, sigma of 30 deg, record altitude of 530 km and radial distance of 120 km) gives `my_fluence = 0.0055`
+* example: `my_fluence = get_TGF_fluence(11,30,530,120,400)` (TGF located at 11 km, sigma of 30 deg, record altitude of 530 km and radial distance of 120 km, energy threshold of 400 keV) gives `my_fluence = 0.0055`
     
