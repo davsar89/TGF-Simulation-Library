@@ -19,7 +19,7 @@
     * WARNING: each profile (i.e. fluence versus radial distance) uses a different radial distance grid.
 
 * The MATLAB function `get_TGF_fluence` (contained in the file `get_TGF_fluence.m`) takes as input the TGF altitude; the TGF sigma angle, the record (satellite) altitude, the radial distance and the minimum (threshold) energy of recorded photons. 
-    * The first 3 can only have the values specified above, and the radial distance can be any value between 0 and 1200 km.
+    * The source altitude, sigma, record altitude and minimum energy threshold can only have the values specified above. The radial distance can be any value between 0 and 1200 km.
     * Output is in photons/cm^2.
     * The function's file `get_TGF_fluence.m` must be in the same folder as the data file `tgf_fluence_data.mat`
 
