@@ -13,9 +13,10 @@
     * `source_altitude_list` : list of available TGF altitudes (in km)
     * `sigma_angle_list` : list of available TGF beaming angles sigma (in degrees)
     * `record_altitude` : list of available record altitudes (in km)
-    * `fluences` : fluences in photons/cm^2. First index is altitude, second is sigma angle and third is record altitude.
-    * `radial_distances` : radial distances grids (in km) corresponding to `fluences`, between 0 and 1200 km. First index is altitude, second is sigma angle and third is record altitude.
     * `energy_threshold_list` : the list of minimum energy threshold (50, 200 and 400 keV)
+    * `keVXXX` : a structure for each low energy threshold, where XXX is the energy value (50, 200 or 400). Each contains:
+        * `fluences` : fluences in photons/cm^2. First index is altitude, second is sigma angle and third is record altitude.
+        * `radial_distances` : radial distances grids (in km) corresponding to `fluences`, between 0 and 1200 km. First index is altitude, second is sigma angle and third is record altitude.
     * WARNING: each profile (i.e. fluence versus radial distance) uses a different radial distance grid.
 
 * The MATLAB function `get_TGF_fluence` (contained in the file `get_TGF_fluence.m`) takes as input the TGF altitude; the TGF sigma angle, the record (satellite) altitude, the radial distance and the minimum (threshold) energy of recorded photons. 
