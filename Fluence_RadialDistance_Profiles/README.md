@@ -13,8 +13,8 @@
     * `source_altitude_list` : list of available TGF altitudes (in km)
     * `sigma_angle_list` : list of available TGF beaming angles sigma (in degrees)
     * `record_altitude` : list of available record altitudes (in km)
-    * `energy_threshold_list` : the list of minimum energy threshold (50, 200 and 400 keV)
-    * `keVXXX` : a structure for each low energy threshold, where XXX is the energy value (50, 200 or 400). Each contains:
+    * `energy_threshold_list` : the list of minimum energy threshold (20, 50, 100, 200, 300, 400, 500, 750 and 1000 keV)
+    * `keVXXX` : a structure for each low energy threshold, where XXX is the energy value (20, 50, 100, 200, 300, 400, 500, 750 or 1000). Each contains:
         * `fluences` : fluences in photons/cm^2. First index is altitude, second is sigma angle and third is record altitude.
         * `radial_distances` : radial distances grids (in km) corresponding to `fluences`, between 0 and 1200 km. First index is altitude, second is sigma angle and third is record altitude.
     * WARNING: each profile (i.e. fluence versus radial distance) uses a different radial distance grid.

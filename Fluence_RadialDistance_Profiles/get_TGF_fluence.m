@@ -8,7 +8,7 @@ beam_l = tgf_fluence_data_all.sigma_angle_list;
 rec_l = tgf_fluence_data_all.record_altitude;
 
 if ~ismember(ener_thres,ener_thres_l)
-   error('Low energy threshold should be 50, 200 or 400 keV') ;
+   error('Low energy threshold should be 20, 50, 100, 200, 300, 400, 500, 750 or 1000 keV') ;
 end
 
 if ~ismember(tgf_alt,alt_l)
@@ -52,14 +52,26 @@ for ii=1:length(rec_l)
     end
 end
 
-if(ener_thres==50)
+if(ener_thres==20)
+   datafile = tgf_fluence_data_all.keV20;
+elseif(ener_thres==50)
    datafile = tgf_fluence_data_all.keV50;
+elseif(ener_thres==100)
+   datafile = tgf_fluence_data_all.keV100;
 elseif (ener_thres==200)
    datafile = tgf_fluence_data_all.keV200; 
+elseif(ener_thres==300)
+   datafile = tgf_fluence_data_all.keV300;
 elseif (ener_thres==400)
    datafile = tgf_fluence_data_all.keV400; 
+elseif (ener_thres==500)
+   datafile = tgf_fluence_data_all.keV500;
+elseif (ener_thres==750)
+   datafile = tgf_fluence_data_all.keV750;
+elseif (ener_thres==1000)
+   datafile = tgf_fluence_data_all.keV1000;   
 else
-    error('Low energy threshold should be 50, 200 or 400 keV');
+    error('Low energy threshold should be 20, 50, 100, 200, 300, 400, 500, 750 or 1000 keV');
 end
 
 fluences = datafile.fluences{i_alt,i_beam,i_rec};
