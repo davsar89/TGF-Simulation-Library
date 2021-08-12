@@ -2,9 +2,9 @@ clear all
 close all
 clc
 
-alt_list = [9 15];
+alt_list = [9 15 19];
 beam_list = [15 30];
-Radial_dist_list = [347];
+Radial_dist_list = [800];
 
 for ii=1:length(alt_list)
     for jj=1:length(beam_list)
@@ -12,7 +12,7 @@ for ii=1:length(alt_list)
             
             alt = alt_list(ii);
             beam_sigma = beam_list(jj);
-            Radial_dist = Radial_dist_list(kk); % must be between 0 and 600
+            Radial_dist = Radial_dist_list(kk); % must be between 0 and 800
             
             [time_energy_matrix,energy_spectrum,energy_grid,time_spectrum,time_grid] = ...
                 generate_TGF_time_energy_matrix_simple(alt,beam_sigma,Radial_dist);

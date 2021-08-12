@@ -4,7 +4,7 @@ clc
 
 alt = 9;
 beam_sigma = 30;
-Radial_dist = 347; % must be between 0 and 600
+Radial_dist = 347; % must be between 0 and 700
 
 %%
 [time_energy_matrix,energy_spectrum,energy_grid,time_spectrum,time_grid] = ...

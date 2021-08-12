@@ -1,7 +1,7 @@
 function [matrix_L,energy_spectrum,energy_bins,time_spectrum,time_bins] = generate_TGF_time_energy_matrix_simple(altitude,beaming,radial_dist)
 
-if (radial_dist==600)
-   radial_dist=599.99; 
+if (radial_dist==800)
+   radial_dist=799.99; 
 end
 if (radial_dist==0)
    radial_dist=0.01; 

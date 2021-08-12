@@ -7,11 +7,12 @@
 * Possibilities:
   * Available altitudes are 9, 11, 13, 15, 17 and 19 km. 
   * Available beaming angles are sigma of 5, 10, 15, 22, 30 and 40 degrees.
-  * Available radial distances are between 0 and 600 km. The radial distance is defined as the arclength distance (at sea level) between the TGF and the satellite (detector) positions.
-  * the satellite detecting the TGF is assumed at 400 km altitude (other altitude can be deduced by projection)
+  * Available radial distances are between 0 and 800 km. The radial distance is defined as the arclength distance (at sea level) between the TGF and the satellite (detector) positions.
+  * the satellite detecting the TGF is assumed at 400 km altitude (other altitudes can be obtained by projection)
 
 * The data was generated using the Geant4 (Monte-Carlo) based code available here: 
 https://github.com/DavidSarria89/TGF-Propagation-Geant4-MT/
+* A substantial anount if CPU time was required to produce the library. The simulations were performed on resources provided by UNINETTSigma2—the National Infrastructure for High Performance Computing and Data Storage in Norway, under Project number NN9526K.
 
 
 * Example plots:
