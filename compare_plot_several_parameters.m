@@ -2,8 +2,8 @@ clear all
 close all
 clc
 
-alt_list = [9 15 19];
-beam_list = [15 30];
+alt_list = [9 13 15 17 19];
+beam_list = [5];
 Radial_dist_list = [800];
 
 for ii=1:length(alt_list)
