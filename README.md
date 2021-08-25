@@ -14,6 +14,7 @@
 https://github.com/DavidSarria89/TGF-Propagation-Geant4-MT/
 * A substantial anount if CPU time was required to produce the library. The simulations were performed on resources provided by UNINETTSigma2—the National Infrastructure for High Performance Computing and Data Storage in Norway, under Project number NN9526K.
 
+* simulation raw data backup: https://filesender.uninett.no/?s=download&token=6f098351-f71f-4d71-9825-876b0f6ce36b
 
 * Example plots:
 
