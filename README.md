@@ -5,7 +5,7 @@
 * The simulations assume a RREA TGF source energy spectrum (1/E*exp(-E/7.3MeV)) and a gaussian beaming (angular distribution) centered towards zenith.
 * Output energies are between 50 keV and 40 MeV.
 * Possibilities:
-  * Available altitudes are 9, 11, 13, 15, 17 and 19 km. 
+  * Available TGF source altitudes are 9, 11, 13, 15, 17 and 19 km. 
   * Available beaming angles are sigma of 5, 10, 15, 22, 30 and 40 degrees.
   * Available radial distances are between 0 and 800 km. The radial distance is defined as the arclength distance (at sea level) between the TGF and the satellite (detector) positions.
   * the satellite detecting the TGF is assumed at 400 km altitude (other altitudes can be obtained by projection)
